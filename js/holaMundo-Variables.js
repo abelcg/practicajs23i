@@ -95,3 +95,12 @@ let falso = false;
 
 console.log(!verdadero) // negación, con el operador !
 
+
+let comision = '23i'
+
+document.write('<br>Comisión: ' + comision)
+
+//mostrar mensaje de alerta en pantalla
+
+alert("mensaje de alerta")
+
