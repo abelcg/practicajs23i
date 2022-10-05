@@ -25,7 +25,7 @@ https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales
 */
 
 
-/* let number = parseInt(prompt('Ingrese un numero')) 
+/* let number = parseInt(prompt('Ingrese un numero'))  
 let otherNum = parseInt(prompt('Ingrese otro numero')) 
 document.write(number + otherNum)
  */
@@ -91,3 +91,6 @@ if (edadPablo > edadMarcos && edadPablo > edadMaria) {
     document.write("Maria es la mayor")
 }
 
+//OR: Solo 1 condicion sea true p/ que sea true
+
+//AND Ambas condiciones deben ser true para que sea true la comparación
