@@ -9,11 +9,11 @@ function nombreDeFuncion(){
 */
 
 function holaMundo() {
-    console.log("hola mundo, como estas?");
+  console.log("hola mundo, como estas?");
 }
 
 holaMundo();
-//invocar, ejecutar o llamr a una funcion
+//invocar, ejecutar o llamar a una funcion
 
 //funciones con parámetros
 
@@ -55,7 +55,7 @@ function sumarValores(valor1, valor2) {
 
 console.log(sumarValores(8, 2));
 
-console.log(sumarValores(4, 'chau'));
+console.log(sumarValores(4, "chau"));
 
 //funciones flecha o arrows fuctions
 
@@ -71,39 +71,36 @@ let nombreFuncion = ()=>{
 }
  */
 
-let sumar = (num1,  num2)=> num1 + num2
+let sumar = (num1, num2) => num1 + num2;
 
-console.log(sumar(8,5))
+console.log(sumar(8, 5));
 
 //scope de una funcion
 
-let heroe = 'Batman';
+let heroe = "Batman";
 
-function mostrarHeroe(){
-    let heroe = 'Superman';
-    console.log(heroe)
-    return `Bienvenido ${heroe}`
+function mostrarHeroe() {
+  let heroe = "Superman";
+  console.log(heroe);
+  return `Bienvenido ${heroe}`;
 }
 
-
-console.log(mostrarHeroe())
-console.log(heroe)
-
+console.log(mostrarHeroe());
+console.log(heroe);
 
 //funciones anonimas: se declaran como constantes
 
-const square = function (num){
-    //Math.pow() calcula potencias de un numero
-    return Math.pow(num, 2)
-}
+const square = function (num) {
+  //Math.pow() calcula potencias de un numero
+  return Math.pow(num, 2);
+};
 
-let sumSquare = (num1, num2)=>{
-    return square(num1) + square(num2)
-}
+const sumSquare = (num1, num2) => {
+  square(num1) + square(num2);
+};
 //se puede invocar funciones dentro de otra funcion
 
-
-console.log(sumSquare(2,5))
+console.log(sumSquare(2, 5));
 
 /* 
 const hola = function (){
@@ -112,8 +109,25 @@ const hola = function (){
 
 console.log(hola()) */
 
+//tarea realizar una funcion que nos permita realizar las funciones de suma, resta, multiplicación y division
 
+const calculadora = (valor1, valor2, operador = '+') => {
+  if (typeof valor1 !== "number" || typeof valor2 !== "number") {
+    console.warn("debe ingresar un valor numerico");
+  }
+  switch (operador) {
+    case "+":
+      return `${valor1} + ${valor2} = ${valor1 + valor2}`;
+    case "-":
+      return `${valor1} -${valor2} = ${valor1 - valor2}`;
+    case "*":
+      return `${valor1} * ${valor2} = ${valor1 * valor2}`;
+    case "/":
+      return `${valor1} / ${valor2} = ${valor1 / valor2}`;
+    default:
+      return 'Ingrese un operador valido'
+  }
+};
 
-
-
+console.log(calculadora(1,0, '/'))
 
