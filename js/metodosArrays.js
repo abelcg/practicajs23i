@@ -112,7 +112,6 @@ clasificaciones.unshift("Marta");
 console.log(clasificaciones);
 
 const eliminarConcursante = (arr, name) => {
-  
   let posicion = arr.findIndex((concursante) => {
     return concursante === name;
   });
@@ -122,18 +121,17 @@ const eliminarConcursante = (arr, name) => {
   } else {
     console.log("No se encontro ningun concursante");
   }
-
 };
 
-console.log(eliminarConcursante(clasificaciones, 'Celia'))
-console.log(clasificaciones)
+console.log(eliminarConcursante(clasificaciones, "Celia"));
+console.log(clasificaciones);
 
 //Metodo filter
 //es mutable: modifica al array original
 
-//ejemplo: devuelvo un array de nros pares
+//ejemplo: devuelvo un array de nros pares positivos
 let pares = numeros.filter((num) => {
-  return num % 2 == 0;
+  return num % 2 == 0 && num > 0;
 });
 
 console.log(pares);
@@ -176,69 +174,111 @@ console.log(nombresFiltrados("Quin"));
 
 let alumnos = ["Juan", "Pedro", "Carla", "Pablo", "Juan", "Juan Cruz", "Juan"];
 
-let resultadoBusqueda = alumnos.find((alumno) => alumno === "Juan");
+let resultadoBusqueda = alumnos.find((alumno) => alumno === "Juana");
 
 console.log(resultadoBusqueda);
 
-
-//Métodos inmutables 
+//Métodos inmutables
 
 //metodo inmutable
 //map --> devuelve un nuevo arreglo con los resultados de aplicar un llamado a la funcion (callback)
-//a cada uno de elemnetos del array 
+//a cada uno de elemnetos del array
 
+let numerosDobles = numeros.map((num) => num * 2);
 
-let numerosDobles = numeros.map((num)=> num*2)
-
-numeros
-numerosDobles
-numeros
-
+numeros;
+numerosDobles;
+numeros;
 
 //map sirve para hacer una copia o 'clon' del array originally
 
-let copyStudents = students.map((students) => students)
+let copyStudents = students.map((students) => students);
 
-copyStudents
-students
+copyStudents;
+students;
 
-//forEach --> no muta el arreglo original y no genera un nuevo array 
+//forEach --> no muta el arreglo original y no genera un nuevo array
 // Si quiero guardar / copiar en un nuevo array uso map, si no uso forEach
 // forEach nos permite también recorrer el array aplicando una funcion a cada elemento
 
-students.forEach((students)=>{
-  let nameToUpperCase = students.toUpperCase()
-  console.log(nameToUpperCase)
-})
-
+students.forEach((students) => {
+  let nameToUpperCase = students.toUpperCase();
+  console.log(nameToUpperCase);
+});
 
 //concat une dos arrays
 //unir dos array usando spread operator
 
-let arraysJoin = [...students, ...numeros ]
-arraysJoin
+let arraysJoin = [...students, ...numeros];
+arraysJoin;
 
 //Some ---> devuelve true si encuentra un elemento que cumple con la condicion, si no false
-let fruits = ['🍎','🍌','🍐','🍇']
+let fruits = ["🍎", "🍌", "🍐", "🍇"];
 
-console.log(fruits.some((fruit) => fruit ===  '🍉'));
+console.log(fruits.some((fruit) => fruit === "🍉"));
 
-//fill --> llena el array con lo que le pase por parametro 
+//fill --> llena el array con lo que le pase por parametro
 // fill si es mutable!!!!
 
-let apples = ['🍎','🍌','🍐','🍇', '🍉']
-apples.fill('🍎')
+let apples = ["🍎", "🍌", "🍐", "🍇", "🍉"];
+apples.fill("🍎");
 
 //Every ----> devuelve true si todos los elementos cumplen con la condicion, si no false
 
-console.log(apples.every((apple)=> apple === '🍎') )
-
+console.log(apples.every((apple) => apple === "🍎"));
 
 //reduce: metodo que me devuelve un valor resultado de aplicar a cada elemento un callback
 
-let numbers = [1,2,5,6,10]
+let numbers = [1, 2, 5, 6, 10];
 
-let sum = numbers.reduce((resultado, actual)=> resultado + actual, 0)
+let sum = numbers.reduce((acc, curr) => acc + curr, 0);
 
-sum
+sum;
 
+//usando reduce generamos un array con elementos unicos
+
+let array = [18, 8, 9, 18, 18, 3, "4"];
+
+let arrayClone = [...array];
+
+arrayClone;
+
+let uniqueArray = array.reduce(
+  (unique, item) => (unique.includes(item) ? unique : [...unique, item]),
+  []
+);
+
+//TAREA: Encontrar el elemento más grande de un arreglo iterando una sola vez
+
+const getBiggest = (array) =>
+  array.reduce((acc, item) => (acc > item ? acc : item));
+
+const result = getBiggest([50, -1500, 10, 10, 1, 55]);
+
+result;
+
+//TAREA: Generar una función que iterando una sola vez un array elimine todos los
+// undefined, false, 0, null, '' y devuelva un array sin estos.
+// [false, '', 8, 'hola', undefined, null, 77] ---> [8, 'hola', 77]
+// undefined, false, 0, null, '' se evaluan como false
+
+const clean = (arr) => {
+  return arr.reduce((acc, val) => {
+    if (val) {
+      acc.push(val);
+    }
+    return acc;
+  }, []);
+};
+
+const cleaned = clean([1, undefined, null, 0, 2, '151', '', 'hola',false])
+cleaned;
+
+
+
+//Generar un array con elementos únicos usando filter
+
+let arreglo = [5, 8, 8, 45, '77', 'hello', 'world', 'hello', '🍉', '🍉']
+
+let elementosUnicos = arreglo.filter((item, index)=> arreglo.indexOf(item) === index) 
+elementosUnicos;
