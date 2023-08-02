@@ -79,6 +79,14 @@ array3.splice(3, 0 , 5)
 
 console.log(array3)
 
+//agregar elementos en una determina posicion sin modificar el array original
+
+let newArray3 = array3.toSpliced(4,0,6,7)
+
+console.log(newArray3)
+
+console.log(array3)
+
 //elminar elementos en una determina posicion
 
 array3.splice(4,2)
@@ -91,6 +99,7 @@ array3.splice(1)
 
 console.log(array3)
 
+//agregar elementos en una determianda posición sin borrar ningún
 array3.splice(1, 0, 3,2,1)
 
 console.log(array3)
@@ -169,7 +178,8 @@ let numeros = [78,45,12,0]
 console.log([...vocales, ...numeros])
 
 //conocer el indice de un elemento del array usando indexOf
-//indexOf devuelve la posicion del 1er elemento que cumple la condición dada o si no lo encuentra o cumple
+//indexOf devuelve la posicion del 1er elemento que cumple la condición dada o 
+//si no lo encuentra o no cumple
 //devuelve -1
 
 console.log(arrayWord)
