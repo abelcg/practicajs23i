@@ -25,6 +25,13 @@ function nombreDeFuncion(parametro 1, parametro 2){
 
 */
 
+// podría haber definido antes let nombre  = pepe y no pasarlo como parametro y usarlo directamente
+
+/* 
+se pueden poner parametros por defecto function saludar(nombre, apellido= 'gomez') y si no ingreso el 
+parametro apellido saludar('Abel) muestra Abel Gomez
+*/
+
 function saludar(nombre, apellido) {
   console.log(`hola el nombre es: ${nombre} y el apellido es: ${apellido}`);
 }
@@ -57,25 +64,28 @@ console.log(sumarValores(8, 2));
 
 console.log(sumarValores(4, "chau"));
 
-//funciones flecha o arrows fuctions
+//funciones flecha o arrows fuctions: se pueden definir con let si quiero reasignarle el valor en un futuro
+//pero por lo gral como no cambiaran se unsa const
 
 /* 
-let nombreFuncion = ()=>{
+const nombreFuncion = ()=>{
     codigo a ejecutar
 }
 
 */
-
-/* let sumar = (num1,  num2)=>{
+//permiten obvair en algunos casos las {} y el return
+/* const sumar = (num1,  num2)=>{
     return num1 + num2
 }
  */
 
-let sumar = (num1, num2) => num1 + num2;
+//una diferencia con las tradicionales es que no las puede invocar antes de su inicialización
+
+const sumar = (num1, num2) => num1 + num2;
 
 console.log(sumar(8, 5));
 
-//scope de una funcion
+//scope de una funcion: si esta dentro de un bloque ahí nace y muere es variable
 
 let heroe = "Batman";
 
@@ -131,3 +141,37 @@ const calculadora = (valor1, valor2, operador = '+') => {
 
 console.log(calculadora(1,0, '/'))
 
+
+
+
+/* 
+En JavaScript, los términos "función flecha" y "función anónima" 
+a menudo se usan de manera intercambiable, 
+pero en realidad se refieren a conceptos ligeramente diferentes. 
+Permíteme explicarte las diferencias entre ellos:
+
+Función Flecha (Arrow Function):
+Las funciones flecha son una forma más concisa de escribir funciones en JavaScript, introducidas en ECMAScript 6 (ES6). Se caracterizan por la sintaxis reducida utilizando la notación de flecha (=>). Las principales diferencias y características de las funciones flecha son:
+
+Sintaxis concisa: Las funciones flecha permiten evitar la palabra clave function, 
+las llaves {} y la declaración return en algunos casos.
+
+
+Función Anónima:
+Una función anónima es simplemente una función que no tiene un nombre definido. 
+Pueden ser creadas en cualquier lugar donde se espera una expresión de función. No están limitadas a la sintaxis de función flecha, sino que también pueden ser definidas utilizando la sintaxis tradicional de funciones en JavaScript.
+Ejemplo de función anónima usando sintaxis tradicional:
+
+javascript
+Copy code
+const resultado = function(x) {
+  return x * 2;
+};
+En resumen, todas las funciones flecha son funciones anónimas, 
+pero no todas las funciones anónimas son funciones flecha. 
+Las funciones flecha son un subconjunto de las funciones anónimas con características específicas en términos de sintaxis y manejo de this. Las funciones anónimas pueden ser definidas tanto con la sintaxis 
+de función flecha como con la sintaxis tradicional, dependiendo de tus necesidades y preferencias.
+
+
+
+*/
