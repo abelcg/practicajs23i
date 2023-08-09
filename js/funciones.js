@@ -9,7 +9,7 @@ function nombreDeFuncion(){
 */
 
 function holaMundo() {
-  console.log("hola mundo, como estas?");
+  console.log('hola mundo, como estas?');
 }
 
 holaMundo();
@@ -36,7 +36,7 @@ function saludar(nombre, apellido) {
   console.log(`hola el nombre es: ${nombre} y el apellido es: ${apellido}`);
 }
 
-saludar("Abel", "Gonzalez");
+saludar('Abel', 'Gonzalez');
 
 // funciones que nos returnan un valor
 
@@ -48,13 +48,13 @@ function convertirDolaresPesos(dolares) {
 
 let precioCelular = convertirDolaresPesos(100);
 console.log(precioCelular);
-console.log("el precio de la play 5 es " + convertirDolaresPesos(1000));
+console.log('el precio de la play 5 es ' + convertirDolaresPesos(1000));
 
 //ejemplo de funcion con parametros
 
 function sumarValores(valor1, valor2) {
-  if (typeof valor1 !== "number" || typeof valor2 !== "number") {
-    console.warn("debe ingresar un valor numerico");
+  if (typeof valor1 !== 'number' || typeof valor2 !== 'number') {
+    console.warn('debe ingresar un valor numerico');
   } else {
     return `${valor1} + ${valor2} = ${valor1 + valor2}`;
   }
@@ -62,7 +62,7 @@ function sumarValores(valor1, valor2) {
 
 console.log(sumarValores(8, 2));
 
-console.log(sumarValores(4, "chau"));
+console.log(sumarValores(4, 'chau'));
 
 //funciones flecha o arrows fuctions: se pueden definir con let si quiero reasignarle el valor en un futuro
 //pero por lo gral como no cambiaran se unsa const
@@ -87,10 +87,10 @@ console.log(sumar(8, 5));
 
 //scope de una funcion: si esta dentro de un bloque ahí nace y muere es variable
 
-let heroe = "Batman";
+let heroe = 'Batman';
 
 function mostrarHeroe() {
-  let heroe = "Superman";
+  let heroe = 'Superman';
   console.log(heroe);
   return `Bienvenido ${heroe}`;
 }
@@ -122,27 +122,26 @@ console.log(hola()) */
 //tarea realizar una funcion que nos permita realizar las funciones de suma, resta, multiplicación y division
 
 const calculadora = (valor1, valor2, operador = '+') => {
-  if (typeof valor1 !== "number" || typeof valor2 !== "number") {
-    console.warn("debe ingresar un valor numerico");
+  if (typeof valor1 !== 'number' || typeof valor2 !== 'number') {
+    console.warn('debe ingresar un valor numerico');
   }
   switch (operador) {
-    case "+":
+    case '+':
       return `${valor1} + ${valor2} = ${valor1 + valor2}`;
-    case "-":
+    case '-':
       return `${valor1} -${valor2} = ${valor1 - valor2}`;
-    case "*":
+    case '*':
       return `${valor1} * ${valor2} = ${valor1 * valor2}`;
-    case "/":
-      return `${valor1} / ${valor2} = ${valor1 / valor2}`;
+    case '/':
+      return valor2 !== 0
+        ? `${valor1} / ${valor2} = ${valor1 / valor2}`
+        : 'Ingrese un valor distinto de 0';
     default:
-      return 'Ingrese un operador valido'
+      return 'Ingrese un operador valido';
   }
 };
 
-console.log(calculadora(1,0, '/'))
-
-
-
+console.log(calculadora(1, 0, '/'));
 
 /* 
 En JavaScript, los términos "función flecha" y "función anónima" 

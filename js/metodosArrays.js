@@ -26,6 +26,14 @@ console.log(numeros);
 //sort muta al a arreglo original
 
 console.log(
+  numeros.sort(function (a, b) {
+    return a - b;
+  })
+);
+
+//si quiero que ordene de mayor a menor es return b-a
+
+console.log(
   letras.sort(function (a, b) {
     return a - b;
   })
