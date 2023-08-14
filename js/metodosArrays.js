@@ -118,6 +118,18 @@ console.log(clasificaciones);
 clasificaciones.unshift("Marta");
 //Imprime la clasificación actualizada y comprueba que se ha hecho correctamente
 console.log(clasificaciones);
+//Eliminar concursante conociendo su posición
+/* const eliminarConcursante = (arr) => {
+  let posicion = arr.findIndex((concursante) => {
+    return concursante === 'Amaya;  //vale solo para ese nombre 
+  });
+
+  if (posicion > -1) {
+    arr.splice(posicion, 1);
+  } else {
+    console.log("No se encontro ningun concursante");
+  }
+}; */
 
 const eliminarConcursante = (arr, name) => {
   let posicion = arr.findIndex((concursante) => {
@@ -131,7 +143,7 @@ const eliminarConcursante = (arr, name) => {
   }
 };
 
-console.log(eliminarConcursante(clasificaciones, "Celia"));
+eliminarConcursante(clasificaciones, "Celia");
 console.log(clasificaciones);
 
 //Metodo filter
@@ -209,6 +221,25 @@ students;
 // Si quiero guardar / copiar en un nuevo array uso map, si no uso forEach
 // forEach nos permite también recorrer el array aplicando una funcion a cada elemento
 
+/* 
+Tanto forEach como map son métodos de Array y se utilizan para iterar sobre 
+los elementos de un array.
+ Sin embargo, tienen propósitos y comportamientos ligeramente diferentes:
+
+forEach:
+El método forEach itera sobre cada elemento del array y 
+ejecuta una función proporcionada por el usuario en cada iteración. 
+No devuelve un nuevo array, simplemente realiza una operación en cada elemento 
+del array original. No cambia el tamaño del array original ni devuelve un nuevo array.
+
+map:
+El método map también itera sobre cada elemento del array y 
+ejecuta una función proporcionada por el usuario en cada iteración. 
+Sin embargo, a diferencia de forEach, map devuelve un nuevo array con los resultados de 
+aplicar la función en cada elemento. 
+Es especialmente útil cuando deseas transformar o mapear los valores de un array a otro.
+*/
+
 students.forEach((students) => {
   let nameToUpperCase = students.toUpperCase();
   console.log(nameToUpperCase);
@@ -235,7 +266,7 @@ apples.fill("🍎");
 
 console.log(apples.every((apple) => apple === "🍎"));
 
-//reduce: metodo que me devuelve un valor resultado de aplicar a cada elemento un callback
+//reduce: metodo que me devuelve un valor resultado de aplicar a cada elemento un callback. Devueleve el acumulador
 
 let numbers = [1, 2, 5, 6, 10];
 
