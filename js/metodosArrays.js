@@ -189,6 +189,8 @@ console.log(nombresFiltrados(" m "));
 
 console.log(nombresFiltrados("Quin"));
 
+//nos puede servir para hacer un buscador
+
 //find
 //devuelve el premier elemento que cumple con la condición o undefined
 
@@ -279,8 +281,19 @@ sum;
 let array = [18, 8, 9, 18, 18, 3, "4"];
 
 let arrayClone = [...array];
-
 arrayClone;
+
+//puedo agregar cosas andemás de clonarlo let arrayClone = ['hola',...array, 'chau', [4,'jamón']];
+
+//asi como includes sirve para strings tipo 'hola, como estas?'.includes('a') --> true
+//tambien puedo usar includes con arrays tipo arrayClone.includes('chau') ---> true
+
+//la idea es que reduce me devuelva un array que solo contenga lo no repetidos => si no esta incluido
+//el elemnto lo agrego al array si no no lo agrego y deveulvo el array acumulado. Como quiero
+//devolver un array valor inicial es [] y en la 1er vuelta acc = [] y curr el 1er elemento
+// pregunto curr esta incluido en acc = [] ---> no lo esta entonces lo agrego [...acc, curr] y si no
+//esta incluido devuelvo acc 
+//al acc le puedo llmar como quiera por ej unique y a curr item
 
 let uniqueArray = array.reduce(
   (unique, item) => (unique.includes(item) ? unique : [...unique, item]),
