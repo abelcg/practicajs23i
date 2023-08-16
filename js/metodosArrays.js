@@ -301,6 +301,8 @@ let uniqueArray = array.reduce(
 );
 
 //TAREA: Encontrar el elemento más grande de un arreglo iterando una sola vez
+//necesito comparar el priemr elemnto con el segundo por lo cual no preciso de valor inicial
+// si acc = 1er elemento es mayo que el segundo = item devuelvo acc si no item
 
 const getBiggest = (array) =>
   array.reduce((acc, item) => (acc > item ? acc : item));
@@ -313,6 +315,8 @@ result;
 // undefined, false, 0, null, '' y devuelva un array sin estos.
 // [false, '', 8, 'hola', undefined, null, 77] ---> [8, 'hola', 77]
 // undefined, false, 0, null, '' se evaluan como false
+//tendré q comparar si valor es no falseable lo agregue a un array y si lo es no lo agregue
+// por lo tanto como tengo q devolver un array inicializo con valor inicial = [] 
 
 const clean = (arr) => {
   return arr.reduce((acc, val) => {
@@ -328,7 +332,11 @@ cleaned;
 
 
 
-//Generar un array con elementos únicos usando filter
+//Generar un array con elementos únicos usando filter e idexOf
+//Si conozco el indice puedo filtrar los elemnto cuyo indexOf coincida con su posición (index)
+//ya que indexOf retorna el 1ero que encuentra coincidiendo la posición de ese elemento con el
+//valor q retorna indexOf, no así un elemnto repetido ya que el indexOf sera la del 1er elemnto y 
+//por ende no coincidirá con la posición del repetido 
 
 let arreglo = [5, 8, 8, 45, '77', 'hello', 'world', 'hello', '🍉', '🍉']
 
