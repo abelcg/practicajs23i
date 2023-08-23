@@ -1,9 +1,12 @@
+//por ej queremos modelar un usuario. Empezamos a describirlo usando variables. Esta aunque describen al usuario
+//y están relacionadas a este, está sueltas, necesitamos algo que las contenga. Declaramos el objeto usuario
 let nombre = "Abel";
 let apellido = "Cordoba";
 let email = "abel@gmail.com";
 let dni = 32459333;
+// Un paradigma de programación es una manera o estilo de programación de software.
 //un objeto es una forma de modelar algo de la realidad y puede ser tangible o intangible
-//definir o declarar un objeto en forma literal
+//definir o declarar un objeto en forma literal. Veremos dos maneras literal y usando clases aunque exiten otras más
 
 let usuario = {
   //clave: valor | key: value | las calves se le llama propiedades. Describen al objeto
@@ -11,6 +14,11 @@ let usuario = {
   apellido: "Cordoba",
   email: "abel@gmail.com",
   dni: 32459333,
+  //roles: ['admin', 'teacher', 'student'],
+  /* curso: {
+    nombre: 'Fullstack',
+    presencial: false
+  }, */
   //metodos
 
   saludar(){
@@ -35,11 +43,11 @@ console.log(usuario);
 
 //mostrar una propiedad del objeto. Forma 1. nombreObjeto.propiedad
 
-document.write("El nombre del usuario es: " + usuario.nombre);
+//document.write("El nombre del usuario es: " + usuario.nombre);
 
 //mostrar una propiedad del objeto. Forma 2. nombreObjeto['propiedad']
 
-document.write("<br>El apellido del usuario es: " + usuario["apellido"]);
+//document.write("<br>El apellido del usuario es: " + usuario["apellido"]);
 
 /* 
 obs: forma de recorrer un array o cualquier iterable con for... of
@@ -132,7 +140,8 @@ delete usuario.dni
 
 mostrarObjeto()
 
-
+//metodos son las cosas que puede hacer un objeto, sus acciones  y la forma de relacionarse con otros objetos. 
+//Son propiedades cuyos values son funciones anonimas
 //llamar o invocar un método nombreObjeto.metodo()
 
 console.log(usuario.saludar());
