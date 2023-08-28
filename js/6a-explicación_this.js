@@ -24,7 +24,7 @@ si lo definimos como deposito(){
 cuenta.deposito()
 console.log(cuenta.saldo)
 cuenta.retiro()
-console.log(cuenta.saldo)
+
 como los métodos son funciones admiten parámetros. Incluimos el parámetro cantidad
 */
 
